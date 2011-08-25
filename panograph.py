@@ -106,10 +106,24 @@ class findFeatureByEdge:
 
         # copy edge points
         cv.Copy(self.in1, self.col_edge, self.edge)
+
+        #find and mark Feature
+        eig_image_1 = cv.CreateMat(self.in1.width, self.in1.height, cv.CV_32FC1)
+        temp_image_1 = cv.CreateMat(self.in1.width, self.in1.height, cv.CV_32FC1)
+        
+        grey = cv.CreateImage(cv.GetSize(self.col_edge),8,1)
+        cv.CvtColor(self.col_edge,grey,cv.CV_BGR2GRAY)
+        featuredOrigin = cv.CloneImage(self.in1)
+        font = cv.InitFont(cv.CV_FONT_HERSHEY_SIMPLEX, 0.3, 0.3, 0, 1, 8)
+        featurePointArr_1 = cv.GoodFeaturesToTrack(\
+                grey, eig_image_1, temp_image_1, 300, 0.04, 1.0, useHarris = True)
+
+        for (x,y) in featurePointArr_1: 
+            cv.PutText(featuredOrigin,"o",(int(x),int(y)),font,cv.Scalar(10, 200, 200))
         
         # show the self.in1
         cv.ShowImage(self.win_name, self.col_edge)
-        cv.ShowImage(self.ori_win_name, self.in1)
+        cv.ShowImage(self.ori_win_name, featuredOrigin)
 
 
 #pg = panograph()
