@@ -1,7 +1,11 @@
-import cv
+#! /usr/bin/env python
+import cv2.cv as cv
 
 class panograph:
     def __init__(self):
+        self.imgName_1 = "1.jpg"
+        self.imgName_2 = "2.jpg"
+        
         in1 = cv.LoadImageM("hydepark1.jpg")
         in2 = cv.LoadImageM("hydepark2.jpg")
         #dst = cv.CreateMat(in1.rows, in1.cols, cv.CV_8UC3)
@@ -20,6 +24,96 @@ class panograph:
 
         cv.WarpPerspective(in1, in2, persp, 0)
         cv.ShowImage("test", in2)
+#good features:
+    def findFeature(self):
+        imgName_1 = "1.jpg"
+        imgName_2 = "2.jpg"
+        imgName_1 = "hydepark1.jpg"
+        imgName_2 = "hydepark2.jpg"
+        ori_in1 = cv.LoadImageM(imgName_1)
+        ori_in2 = cv.LoadImageM(imgName_2)
+        img1 = cv.LoadImageM("hydepark1.jpg",cv.CV_LOAD_IMAGE_GRAYSCALE)
+        cv.Smooth(img1, img1, cv.CV_MEDIAN,5,5)
+        img2 = cv.LoadImageM("hydepark2.jpg",cv.CV_LOAD_IMAGE_GRAYSCALE)
+        cv.Smooth(img2, img2, cv.CV_MEDIAN,5,5)
 
-panograph()
+        cv.ShowImage("blr", img1)
+
+        eig_image_1 = cv.CreateMat(img1.rows, img1.cols, cv.CV_32FC1)
+        temp_image_1 = cv.CreateMat(img1.rows, img1.cols, cv.CV_32FC1)
+        eig_image_2 = cv.CreateMat(img2.rows, img2.cols, cv.CV_32FC1)
+        temp_image_2 = cv.CreateMat(img2.rows, img2.cols, cv.CV_32FC1)
+        font = cv.InitFont(cv.CV_FONT_HERSHEY_SIMPLEX, 0.3, 0.3, 0, 1, 8)
+        featurePointArr_1 = cv.GoodFeaturesToTrack(\
+                img1, eig_image_1, temp_image_1, 300, 0.04, 1.0, useHarris = True)
+        featurePointArr_2 = cv.GoodFeaturesToTrack(\
+                img1, eig_image_2, temp_image_2, 300, 0.04, 5.0, useHarris = True)
+
+        for (x,y) in featurePointArr_1: 
+            cv.PutText(ori_in1,"o",(int(x),int(y)),font,cv.Scalar(10, 200, 200))
+        for (x,y) in featurePointArr_2: 
+            cv.PutText(ori_in2,"o",(int(x),int(y)),font,cv.Scalar(10, 200, 200))
+        cv.ShowImage("features_1", ori_in1)
+        cv.ShowImage("features_2", ori_in2)
+    def surf(self):
+        #not implemented yet
+        dummy = "not implemented yet"
+        
+class findFeatureByEdge:
+    def __init__(self):
+        
+        self.imgName_1 = "1.jpg"
+        self.imgName_2 = "2.jpg"
+        self.imgName_1 = "hydepark1.jpg"
+        self.imgName_2 = "hydepark2.jpg"
+
+        self.win_name = "Edge"
+        self.ori_win_name = "original"
+        self.trackbar_name = "Threshold"
+        
+        self.in1 = cv.LoadImage(self.imgName_1, cv.CV_LOAD_IMAGE_COLOR)
+        self.in2 = cv.LoadImage(self.imgName_2, cv.CV_LOAD_IMAGE_COLOR)
+
+        # create the output self.in1
+        self.col_edge = cv.CreateImage((self.in1.width, self.in1.height), 8, 3)
+
+        # convert to grayscale
+        self.gray = cv.CreateImage((self.in1.width, self.in1.height), 8, 1)
+        self.edge = cv.CreateImage((self.in1.width, self.in1.height), 8, 1)
+        cv.CvtColor(self.in1, self.gray, cv.CV_BGR2GRAY)
+
+        # create the window
+        cv.NamedWindow(self.win_name, cv.CV_WINDOW_AUTOSIZE)
+        cv.NamedWindow(self.ori_win_name, cv.CV_WINDOW_AUTOSIZE)
+
+    def show(self):
+        # create the trackbar
+        cv.CreateTrackbar(self.trackbar_name, self.win_name, 1, 100, self.on_trackbar)
+        # show the self.in1
+        self.on_trackbar(0)
+
+    # the callback on the trackbar
+    def on_trackbar(self,position):
+
+        cv.Smooth(self.gray, self.edge, cv.CV_BLUR, 3, 3, 0)
+        cv.Not(self.gray, self.edge)
+
+        # run the edge dector on gray scale
+        cv.Canny(self.gray, self.edge, position, position * 3, 3)
+
+        # reset
+        cv.SetZero(self.col_edge)
+
+        # copy edge points
+        cv.Copy(self.in1, self.col_edge, self.edge)
+        
+        # show the self.in1
+        cv.ShowImage(self.win_name, self.col_edge)
+        cv.ShowImage(self.ori_win_name, self.in1)
+
+
+#pg = panograph()
+#pg.findFeature()
+ffbe = findFeatureByEdge()
+ffbe.show()
 cv.WaitKey()
