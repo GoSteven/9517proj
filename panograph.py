@@ -64,11 +64,10 @@ class findFeatureByEdge:
         
         self.imgName_1 = "1.jpg"
         self.imgName_2 = "2.jpg"
-        self.imgName_1 = "hydepark1.jpg"
-        self.imgName_2 = "hydepark2.jpg"
 
         self.win_name = "Edge"
-        self.ori_win_name = "original"
+        self.ori_win_name_1 = self.imgName_1
+        self.ori_win_name_2 = self.imgName_2
         self.trackbar_name = "Threshold"
         
         self.in1 = cv.LoadImage(self.imgName_1, cv.CV_LOAD_IMAGE_COLOR)
@@ -84,7 +83,8 @@ class findFeatureByEdge:
 
         # create the window
         cv.NamedWindow(self.win_name, cv.CV_WINDOW_AUTOSIZE)
-        cv.NamedWindow(self.ori_win_name, cv.CV_WINDOW_AUTOSIZE)
+        cv.NamedWindow(self.ori_win_name_1, cv.CV_WINDOW_AUTOSIZE)
+        cv.NamedWindow(self.ori_win_name_1, cv.CV_WINDOW_AUTOSIZE)
 
     def show(self):
         # create the trackbar
@@ -92,9 +92,20 @@ class findFeatureByEdge:
         # show the self.in1
         self.on_trackbar(0)
 
+    def surfExtract(self, img, threshold):
+        grey = cv.CreateImage(cv.GetSize(img),8,1)
+        cv.CvtColor(img, grey, cv.CV_BGR2GRAY)
+        (keypoints,descriptors) = cv.ExtractSURF(grey, None, cv.CreateMemStorage(),(0,threshold,3,1))
+        print len(keypoints), len(descriptors)
+        if 0:
+            for ((x, y), laplacian, size, dir, hessian) in keypoints:
+                print "x=%d y=%d laplacian=%d size=%d dir=%f hessian=%f" % (x, y, laplacian, size, dir, hessian)
+        return keypoints
+
     # the callback on the trackbar
     def on_trackbar(self,position):
 
+        print "poosiotn: ", position
         cv.Smooth(self.gray, self.edge, cv.CV_BLUR, 3, 3, 0)
         cv.Not(self.gray, self.edge)
 
@@ -113,17 +124,37 @@ class findFeatureByEdge:
         
         grey = cv.CreateImage(cv.GetSize(self.col_edge),8,1)
         cv.CvtColor(self.col_edge,grey,cv.CV_BGR2GRAY)
-        featuredOrigin = cv.CloneImage(self.in1)
-        font = cv.InitFont(cv.CV_FONT_HERSHEY_SIMPLEX, 0.3, 0.3, 0, 1, 8)
-        featurePointArr_1 = cv.GoodFeaturesToTrack(\
-                grey, eig_image_1, temp_image_1, 300, 0.04, 1.0, useHarris = True)
+        keypoints_1 = self.surfExtract(self.in1, position*100)
+        keypoints_2 = self.surfExtract(self.in2, position*100)
 
-        for (x,y) in featurePointArr_1: 
-            cv.PutText(featuredOrigin,"o",(int(x),int(y)),font,cv.Scalar(10, 200, 200))
+        #GenericDescriptorMatcher
+#        matches
+#        cv.GenericDescriptorMatcher.match(self.in1, keypoints_1, self.in2, keypoints_2, matches, None, None)
+
+        featuredOrigin_1 = cv.CloneImage(self.in1)
+        featuredOrigin_2 = cv.CloneImage(self.in2)
+        font = cv.InitFont(cv.CV_FONT_HERSHEY_SIMPLEX, 0.3, 0.3, 0, 1, 8)
+
+
+        choice = 2
+        if choice == 1:
+            #Draw goodFeatureTotrack points
+            featurePointArr_1 = cv.GoodFeaturesToTrack(\
+                    grey, eig_image_1, temp_image_1, 300, 0.04, 1.0, useHarris = True)
+            for (x,y) in featurePointArr_1: 
+                cv.PutText(featuredOrigin,"o",(int(x),int(y)),font,cv.Scalar(10, 200, 200))
+        if choice == 2:
+            #Draw SURF keypoints
+            for ((x, y), laplacian, size, dir, hessian) in keypoints_1:
+                cv.PutText(featuredOrigin_1,"o",(int(x),int(y)),font,cv.Scalar(10, 200, 200))
+            for ((x, y), laplacian, size, dir, hessian) in keypoints_2:
+                cv.PutText(featuredOrigin_2,"o",(int(x),int(y)),font,cv.Scalar(10, 200, 200))
+
         
         # show the self.in1
         cv.ShowImage(self.win_name, self.col_edge)
-        cv.ShowImage(self.ori_win_name, featuredOrigin)
+        cv.ShowImage(self.ori_win_name_1, featuredOrigin_1)
+        cv.ShowImage(self.ori_win_name_2, featuredOrigin_2)
 
 
 #pg = panograph()
