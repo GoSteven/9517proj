@@ -157,7 +157,7 @@ class findFeatureByEdge:
         cv.ShowImage(self.ori_win_name_2, featuredOrigin_2)
 
 
-#pg = panograph()
+pg = panograph()
 #pg.findFeature()
 ffbe = findFeatureByEdge()
 ffbe.show()

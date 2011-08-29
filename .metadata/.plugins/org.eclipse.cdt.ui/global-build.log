@@ -1,0 +1,440 @@
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+make all 
+Building file: ../generic_descriptor_match.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"generic_descriptor_match.d" -MT"generic_descriptor_match.d" -o "generic_descriptor_match.o" "../generic_descriptor_match.cpp"
+Finished building: ../generic_descriptor_match.cpp
+ 
+Building target: ProjPart1
+Invoking: Cross G++ Linker
+g++  -o "ProjPart1"  ./generic_descriptor_match.o   
+Undefined symbols for architecture x86_64:
+  "_cvCreateImage", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvSetImageROI", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvCvtColor", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvResetImageROI", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvCircle", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvLine", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "cv::fastFree(void*)", referenced from:
+      cv::Ptr<cv::GenericDescriptorMatcher>::release()      in generic_descriptor_match.o
+      cv::Mat::~Mat() in generic_descriptor_match.o
+  "cv::Mat::deallocate()", referenced from:
+      cv::Mat::release()    in generic_descriptor_match.o
+  "cv::GenericDescriptorMatcher::create(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvLoadImage", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::SURF::SURF(double, int, int, bool, bool)", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::Mat::Mat(_IplImage const*, bool)", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::SURF::operator()(cv::Mat const&, cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&) const", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::GenericDescriptorMatcher::match(cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&, cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&, std::vector<cv::DMatch, std::allocator<cv::DMatch> >&, cv::Mat const&) const", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvNamedWindow", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvShowImage", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvWaitKey", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvReleaseImage", referenced from:
+      _main in generic_descriptor_match.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+make: *** [ProjPart1] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+make all 
+Building target: ProjPart1
+Undefined symbols for architecture x86_64:
+  "_cvCreateImage", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+Invoking: Cross G++ Linker
+g++  -o "ProjPart1"  ./generic_descriptor_match.o   
+  "_cvSetImageROI", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvCvtColor", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvResetImageROI", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvCircle", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvLine", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "cv::fastFree(void*)", referenced from:
+      cv::Ptr<cv::GenericDescriptorMatcher>::release()      in generic_descriptor_match.o
+      cv::Mat::~Mat() in generic_descriptor_match.o
+  "cv::Mat::deallocate()", referenced from:
+      cv::Mat::release()    in generic_descriptor_match.o
+  "cv::GenericDescriptorMatcher::create(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvLoadImage", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::SURF::SURF(double, int, int, bool, bool)", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::Mat::Mat(_IplImage const*, bool)", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::SURF::operator()(cv::Mat const&, cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&) const", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::GenericDescriptorMatcher::match(cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&, cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&, std::vector<cv::DMatch, std::allocator<cv::DMatch> >&, cv::Mat const&) const", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvNamedWindow", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvShowImage", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvWaitKey", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvReleaseImage", referenced from:
+      _main in generic_descriptor_match.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+make: *** [ProjPart1] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+make all 
+Building target: ProjPart1
+Invoking: Cross G++ Linker
+g++  -o "ProjPart1"  ./generic_descriptor_match.o   
+Undefined symbols for architecture x86_64:
+  "_cvCreateImage", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvSetImageROI", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvCvtColor", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvResetImageROI", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvCircle", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvLine", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "cv::fastFree(void*)", referenced from:
+      cv::Ptr<cv::GenericDescriptorMatcher>::release()      in generic_descriptor_match.o
+      cv::Mat::~Mat() in generic_descriptor_match.o
+  "cv::Mat::deallocate()", referenced from:
+      cv::Mat::release()    in generic_descriptor_match.o
+  "cv::GenericDescriptorMatcher::create(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvLoadImage", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::SURF::SURF(double, int, int, bool, bool)", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::Mat::Mat(_IplImage const*, bool)", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::SURF::operator()(cv::Mat const&, cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&) const", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::GenericDescriptorMatcher::match(cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&, cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&, std::vector<cv::DMatch, std::allocator<cv::DMatch> >&, cv::Mat const&) const", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvNamedWindow", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvShowImage", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvWaitKey", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvReleaseImage", referenced from:
+      _main in generic_descriptor_match.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+make: *** [ProjPart1] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o generic_descriptor_match.o ../generic_descriptor_match.cpp
+Internal Builder: Command canceled
+Build error occurred, build is stopped
+Time consumed: 25967  ms.  
+
+**** Rebuild of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o generic_descriptor_match.o ../generic_descriptor_match.cpp
+Internal Builder: Command canceled
+Build error occurred, build is stopped
+Time consumed: 12855  ms.  
+
+**** Rebuild of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o generic_descriptor_match.o ../generic_descriptor_match.cpp
+Internal Builder: Command canceled
+Build error occurred, build is stopped
+Time consumed: 4542  ms.  
+
+**** Rebuild of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o generic_descriptor_match.o ../generic_descriptor_match.cpp
+g++ -o ProjPart1 generic_descriptor_match.o
+Undefined symbols for architecture x86_64:
+  "_cvCreateImage", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvSetImageROI", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvCvtColor", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvResetImageROI", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvCircle", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvLine", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "cv::fastFree(void*)", referenced from:
+      cv::Ptr<cv::GenericDescriptorMatcher>::release()      in generic_descriptor_match.o
+      cv::Mat::~Mat() in generic_descriptor_match.o
+  "cv::Mat::deallocate()", referenced from:
+      cv::Mat::release()    in generic_descriptor_match.o
+  "cv::GenericDescriptorMatcher::create(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvLoadImage", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::SURF::SURF(double, int, int, bool, bool)", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::Mat::Mat(_IplImage const*, bool)", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::SURF::operator()(cv::Mat const&, cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&) const", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::GenericDescriptorMatcher::match(cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&, cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&, std::vector<cv::DMatch, std::allocator<cv::DMatch> >&, cv::Mat const&) const", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvNamedWindow", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvShowImage", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvWaitKey", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvReleaseImage", referenced from:
+      _main in generic_descriptor_match.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+Internal Builder: Command canceled
+Build error occurred, build is stopped
+Time consumed: 5714  ms.  
+
+**** Rebuild of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+g++ -I /usr/local/include -L /usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann -O0 -g3 -Wall -c -fmessage-length=0 -o generic_descriptor_match.o ../generic_descriptor_match.cpp
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_core: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_imgproc: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_highgui: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_ml: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_video: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_features2d: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_calib3d: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_objdetect: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_contrib: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_legacy: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_flann: linker input file unused because linking not done
+g++ -o ProjPart1 generic_descriptor_match.o
+Undefined symbols for architecture x86_64:
+  "_cvCreateImage", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvSetImageROI", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvCvtColor", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvResetImageROI", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvCircle", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "_cvLine", referenced from:
+      DrawCorrespondences(_IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, _IplImage*, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> > const&, std::vector<cv::DMatch, std::allocator<cv::DMatch> > const&)in generic_descriptor_match.o
+  "cv::fastFree(void*)", referenced from:
+      cv::Ptr<cv::GenericDescriptorMatcher>::release()      in generic_descriptor_match.o
+      cv::Mat::~Mat() in generic_descriptor_match.o
+  "cv::Mat::deallocate()", referenced from:
+      cv::Mat::release()    in generic_descriptor_match.o
+  "cv::GenericDescriptorMatcher::create(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvLoadImage", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::SURF::SURF(double, int, int, bool, bool)", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::Mat::Mat(_IplImage const*, bool)", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::SURF::operator()(cv::Mat const&, cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&) const", referenced from:
+      _main in generic_descriptor_match.o
+  "cv::GenericDescriptorMatcher::match(cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&, cv::Mat const&, std::vector<cv::KeyPoint, std::allocator<cv::KeyPoint> >&, std::vector<cv::DMatch, std::allocator<cv::DMatch> >&, cv::Mat const&) const", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvNamedWindow", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvShowImage", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvWaitKey", referenced from:
+      _main in generic_descriptor_match.o
+  "_cvReleaseImage", referenced from:
+      _main in generic_descriptor_match.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+Build error occurred, build is stopped
+Time consumed: 8813  ms.  
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+g++ -I /usr/local/include -L /usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann -o ProjPart1 generic_descriptor_match.o
+Build complete for project ProjPart1
+Time consumed: 774  ms.  
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Clean-only build of configuration Debug for project ProjPart1 ****
+rm -rf generic_descriptor_match.d ProjPart1 generic_descriptor_match.o
+Build complete for project ProjPart1
+
+**** Rebuild of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+g++ -I /usr/local/include -L /usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann -O0 -g3 -Wall -c -fmessage-length=0 -o generic_descriptor_match.o ../generic_descriptor_match.cpp
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_core: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_imgproc: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_highgui: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_ml: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_video: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_features2d: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_calib3d: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_objdetect: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_contrib: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_legacy: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_flann: linker input file unused because linking not done
+g++ -I /usr/local/include -L /usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann -o ProjPart1 generic_descriptor_match.o
+Build complete for project ProjPart1
+Time consumed: 10276  ms.  
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+Nothing to build for ProjPart1
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+g++ -I /usr/local/include -L /usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann -O0 -g3 -Wall -c -fmessage-length=0 -o generic_descriptor_match.o ../generic_descriptor_match.cpp
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_core: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_imgproc: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_highgui: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_ml: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_video: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_features2d: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_calib3d: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_objdetect: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_contrib: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_legacy: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_flann: linker input file unused because linking not done
+g++ -I /usr/local/include -L /usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann -o ProjPart1 generic_descriptor_match.o
+Build complete for project ProjPart1
+Time consumed: 14142  ms.  
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+g++ -I /usr/local/include -L /usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann -O0 -g3 -Wall -c -fmessage-length=0 -o generic_descriptor_match.o ../generic_descriptor_match.cpp
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_core: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_imgproc: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_highgui: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_ml: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_video: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_features2d: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_calib3d: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_objdetect: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_contrib: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_legacy: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_flann: linker input file unused because linking not done
+g++ -I /usr/local/include -L /usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann -o ProjPart1 generic_descriptor_match.o
+Build complete for project ProjPart1
+Time consumed: 7541  ms.  

@@ -1,0 +1,19 @@
+
+**** Build of configuration Debug for project ProjPart1 ****
+
+**** Internal Builder is used for build               ****
+g++ -I /usr/local/include -L /usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann -O0 -g3 -Wall -c -fmessage-length=0 -o generic_descriptor_match.o ../generic_descriptor_match.cpp
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_core: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_imgproc: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_highgui: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_ml: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_video: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_features2d: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_calib3d: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_objdetect: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_contrib: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_legacy: linker input file unused because linking not done
+i686-apple-darwin11-llvm-g++-4.2: -lopencv_flann: linker input file unused because linking not done
+g++ -I /usr/local/include -L /usr/local/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_contrib -lopencv_legacy -lopencv_flann -o ProjPart1 generic_descriptor_match.o
+Build complete for project ProjPart1
+Time consumed: 7541  ms.  

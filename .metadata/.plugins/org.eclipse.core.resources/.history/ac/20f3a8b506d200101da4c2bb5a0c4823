@@ -1,0 +1,18 @@
+/*
+ * Matcher.cpp
+ *
+ *  Created on: Aug 29, 2011
+ *      Author: yousilin
+ */
+
+#include "Matcher.h"
+
+Matcher::Matcher() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Matcher::~Matcher() {
+	// TODO Auto-generated destructor stub
+}
+
