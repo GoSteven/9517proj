@@ -3,7 +3,6 @@
 
 #include <cstdio>
 
-
 Panograph::Panograph(const Mat &base) : pano(base.clone()), mask(base.rows, base.cols, DataType<unsigned char>::type, Scalar(255))
 {
 }
@@ -105,19 +104,31 @@ void Panograph::add(const Mat& image, const vector<Point2f>& panoPoints, const v
 //Simple test
 #include <opencv/highgui.h>
 int main(int argc, char *argv[]) {
-    Mat h1 = imread("hydepark1.jpg");
-    Mat h2 = imread("hydepark2.jpg");
+	const char* object_filename = argc == 3 ? argv[1] : "1.jpg";
+	const char* scene_filename = argc == 3 ? argv[2] : "2.jpg";
+    Mat h1 = imread(object_filename);
+    Mat h2 = imread(scene_filename);
     assert(h1.data);
     assert(h2.data);
+
+    vector<int> p1x, p1y, p2x, p2y;
+    GetMachingPair(object_filename, scene_filename, p1x, p1y, p2x, p2y);
+
     vector<Point2f> pts1, pts2;
-    pts1.push_back(Point2f(218, 106));
-    pts1.push_back(Point2f(421, 406));
-    pts1.push_back(Point2f(70, 405));
-    pts1.push_back(Point2f(143, 439));
-    pts2.push_back(Point2f(118, 22));
-    pts2.push_back(Point2f(282, 260));
-    pts2.push_back(Point2f(0, 265));
-    pts2.push_back(Point2f(56, 292));
+
+    for (int i = 0; i < p1x.size(); i++)
+    {
+    	pts1.push_back(Point2f(p1x[i], p1y[i]));
+    	pts2.push_back(Point2f(p2x[i], p2y[i]));
+    }
+//    pts1.push_back(Point2f(218, 106));
+//    pts1.push_back(Point2f(421, 406));
+//    pts1.push_back(Point2f(70, 405));
+//    pts1.push_back(Point2f(143, 439));
+//    pts2.push_back(Point2f(118, 22));
+//    pts2.push_back(Point2f(282, 260));
+//    pts2.push_back(Point2f(0, 265));
+//    pts2.push_back(Point2f(56, 292));
 
 
     Panograph p(h1);

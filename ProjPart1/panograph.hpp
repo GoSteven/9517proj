@@ -13,3 +13,5 @@ struct Panograph {
 
 };
 
+void GetMachingPair(const char* img1, const char* img2, vector<int>& p1x, vector<int>& p1y, vector<int>& p2x, vector<int>& p2y);
+

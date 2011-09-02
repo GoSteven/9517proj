@@ -159,6 +159,6 @@ class findFeatureByEdge:
 
 pg = panograph()
 #pg.findFeature()
-ffbe = findFeatureByEdge()
-ffbe.show()
+#ffbe = findFeatureByEdge()
+#ffbe.show()
 cv.WaitKey()
